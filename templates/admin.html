@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Admin
+{% endblock %}
+
+{% block main %}
+    <div><a href = "/add_items" method="post">Add items</a></div>
+    <div><a href = "/remove_items" method="post">Remove items</a></div>
+    <div><a href = "/confirm">Mark order as finished</a></div>
+    <table class = "table table-striped table-bordered table-hover">
+        <tr>
+            <td>Customer ID</td>
+            <td>Customer Name</td>
+            <td>Items</td>
+            <td>Price</td>
+            <td>Address</td>
+        </tr>
+        {% for i in range(length) %}
+            <tr>
+                <td>{{orders[i]["id"]}}</td>
+                <td>{{orders[i]["name"]}}</td>
+                <td>{{orders[i]["items"]}}</td>
+                <td>{{orders[i]["price"]}}</td>
+                <td>{{orders[i]["address"]}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

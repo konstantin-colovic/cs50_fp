@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Remove items
+{% endblock %}
+
+{% block main %}
+    <form action="/remove_items" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="name" placeholder="Name of item" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Remove item</button>
+    </form>
+{% endblock %}
